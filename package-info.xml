@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<name>Headers bbCode</name>
+	<id>frenzie:headersbbcode</id>
+	<type>modification</type>
+	<version>1.0</version>
+
+	<install for"1.0 - 1.0.99">
+		<readme type="file" parsebbc="true">readme.txt</readme>
+		<require-file name="headers-bbcode.php" destination="SOURCEDIR/addons" />
+		<hook hook="integrate_bbc_codes" file="SOURCEDIR/addons/headers-bbcode.php" function="headers_bbcode" />
+	</install>
+	<uninstall for="1.0 - 1.0.99">
+		<hook reverse="true" hook="integrate_bbc_codes" file="SOURCEDIR/addons/headers-bbcode.php" function="headers_bbcode" />
+		<remove-file name="SOURCEDIR/addons/headers-bbcode.php" />
+	</uninstall>
+
+</package-info>
